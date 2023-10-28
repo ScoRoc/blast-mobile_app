@@ -1,20 +1,23 @@
+import 'react-native-gesture-handler';
+// Libraries - gesture handler must be first on this file, all others below
+import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+// Pages
+import DrawerPage from './pages_test/DrawerPage';
+import StackPage from './pages_test/StackPage';
+
+/*
+ * App
+ */
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <DrawerPage />
+      {/* <StackPage /> */}
+
+      <StatusBar style='auto' />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
